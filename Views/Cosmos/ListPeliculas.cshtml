@@ -1,0 +1,69 @@
+﻿@model IEnumerable<AZURE_FINAL.Models.Pelicula>
+
+@{
+    ViewData["Title"] = "Lista de peliculas";
+}
+<br>
+<br>
+
+<h1>LISTA DE ASISTENCIAS</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Director)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estreno)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Director)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estreno)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Editar", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Detalles", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+       
+}
+    </tbody>
+
+</table>
+<br>
+<h1>REGISTRO MEDIANTE AZURE IOT CENTRAL - GEOLOCALIZACION</h1>
+<br>
+<iframe width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=640e8409-7ce5-4013-a14c-7bb21f6bda4e&autoAuth=true&ctid=98201fef-d9f6-4e68-84f5-c2705074e342&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXNvdXRoLWNlbnRyYWwtdXMtcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D" frameborder="0" allowFullScreen="true"></iframe>
