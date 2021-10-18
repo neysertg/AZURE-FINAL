@@ -44,10 +44,18 @@
         </form>
     </div>
 </div>
-
 <div>
-    <a asp-action="Index">Regresar</a>
+    <a asp-action="Index">Regresar </a>
 </div>
+<br>
+
+  <div class="container">
+      <div id="logo" class="pull-left">
+        <a href="#hero"><img src="~/img/qr.jpg" alt="" title="" /></img></a>
+        <!-- Descomenta abajo si prefieres usar una imagen de texto -->
+        <!--<h1><a href="#hero">Encabezado 1</a></h1>-->
+      </div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
