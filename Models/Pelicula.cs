@@ -12,15 +12,15 @@ namespace AZURE_FINAL.Models
         [JsonProperty(PropertyName = "id")]
           [Display(Name="ID")]
         public String Id { get; set; }
-
          [Display(Name="NOMBRE")]
-        public String Categoria { get; set; }
+
+        public String Nombre { get; set; }
          [Display(Name="APE_PATERNO")]
-        public String Titulo { get; set; }
+        public String Ape_paterno { get; set; }
          [Display(Name="APE_MATERNO")]
-        public String Director { get; set; }
+        public String Ape_materno { get; set; }
          [Display(Name="CURSO")]
-        public String Estreno { get; set; }
+        public String Curso { get; set; }
 
         public override string ToString()
         {

@@ -83,14 +83,14 @@ namespace AZURE_FINAL.Services
             await this.client.DeleteDocumentAsync(uri);
         }
 
-        public List<Pelicula> BuscarPeliculas(String categoria)
+        public List<Pelicula> BuscarPeliculas(String nombre)
         {
             FeedOptions options = new FeedOptions() { MaxItemCount = -1 };
             Uri uri = UriFactory.CreateDocumentCollectionUri(this.bbdd, this.collection);
-            String sql = "select * from c where c.Categoria='" + categoria + "'";
+            String sql = "select * from c where c.Nombre='" + nombre + "'";
             IQueryable<Pelicula> query = this.client.CreateDocumentQuery<Pelicula>(uri, sql, options);
             IQueryable<Pelicula> querylambda = this.client.CreateDocumentQuery<Pelicula>(uri, options)
-                    .Where(z => z.Categoria == categoria);
+                    .Where(z => z.Nombre == nombre);
 
             return query.ToList();
         }
@@ -100,13 +100,13 @@ namespace AZURE_FINAL.Services
             List<Pelicula> peliculas = new List<Pelicula>() {
             new Pelicula
             {
-                Id="70474403",Categoria="JOSE CARLOS", Titulo="FLORES",
-                Director= "APAZA", Estreno = "TALLER DE PROYECTOS"
+                Id="70474403",Nombre="JOSE CARLOS", Ape_paterno="FLORES",
+                Ape_materno= "APAZA", Curso = "TALLER DE PROYECTOS"
             },
              new Pelicula
             {
-               Id="70457896",Categoria="DIEGO", Titulo="QUISPE",
-                Director= "PARIZACA", Estreno = "FEP"
+               Id="70457896",Nombre="DIEGO", Ape_paterno="QUISPE",
+                Ape_materno= "PARIZACA", Curso = "FEP"
             }
             };
             return peliculas;
